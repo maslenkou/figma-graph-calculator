@@ -1,5 +1,6 @@
---image-placeholder--
-
+![Main preview image](/github-assets/main-image.png)
+<br />
+ 
 # Figma Graph Calculator
 Visualize any math functions by rendering their graphs right in Figma!
 Turn any mathematical expressions and functions into editable bezier curves in seconds. Simply enter the function you want to visualize, for example, *f(x) = sin(x)*, press Insert, and enjoy the rendered graph right in your Figma file. 
