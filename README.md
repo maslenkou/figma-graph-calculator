@@ -19,7 +19,7 @@ Simple as that:
 <br />
 
 ## ✍️  Supported input syntax
-I work hard to implement the support or every function, expression, and syntax from [math.js](https://mathjs.org/docs/reference/functions.html). Still, not everything works well, but here is a table containing all the supported and tested syntax you can already use:
+I work hard to implement the support for every function, expression, and syntax from [math.js](https://mathjs.org/docs/reference/functions.html#trigonometry-functions). Still, not everything works well, but here is a table containing all the supported and tested syntax you can already use:
 <table>
   <tbody>
     <tr valign="top">
@@ -157,8 +157,7 @@ I work hard to implement the support or every function, expression, and syntax f
 ## ☹️  Limitations and known issues
 A few known issues and limitations:
 * Although the plugin can already preview discontinuous and periodical functions like *f(x) = tan(x)* quite all right, it cannot render them properly.
-* Not every graph type is rendered and scaled in the way it should, especially functions with abrupt changes like *f(x) = 1/x*.
-* Not every [math.js](mathjs.org/) supported expression can be parsed without throwing an error, like basic *f(x) = sqrt(x)* throws an error. I still don't exactly know why.
+* Not every graph type is rendered and scaled as it should, especially functions with abrupt changes like *f(x) = 1/x*.
 <br />
 
 ## 👀  Future development
@@ -166,7 +165,7 @@ I'm a product designer and programming is only my hobby, so besides basically le
 * Reduce the number of points in the rendered vector path by implementing [the Ramer–Douglas–Peucker algorithm](https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm).
 * Refactor and rewrite the most problematic parts of the code. Probably redesign the logic distributed between Typescript and UI files.
 * Enrich the UI by adding the supported syntax pop-up and GitHub repository link.
-* Improve the performance and speed by simplifying the process of previewing the entered function on canvas as well as the method of rendering the final vector path. I know that it's done pretty badly. 
+* Improve the performance and speed by simplifying the process of previewing the entered function on canvas as well as the method of rendering the final vector path. I know that it's done  badly. 
 <br />
 
 ## 🪲  Bug reports or feature requests
@@ -176,7 +175,7 @@ If you have a bug report or a feature request, please don’t hesitate to add a 
 <br />
 
 ## 🫡    Support
-The best reward and motivation for me will be giving this project a star ⭐️ or contributing to its development.
+My best reward and motivation are you giving this project a star ⭐️ or contributing to its development.
 <br />
 
  
