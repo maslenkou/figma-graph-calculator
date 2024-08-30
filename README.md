@@ -2,8 +2,8 @@
 <br />
  
 # Figma Graph Calculator
-Visualize any math functions by rendering their graphs right in Figma!
-Turn any mathematical expressions and functions into editable bezier curves in seconds. Simply enter the function you want to visualize, for example, *f(x) = sin(x)*, press Insert, and enjoy the rendered graph right in your Figma file. 
+Visualise any math functions by rendering their graphs right on Figma canvas!
+Turn any mathematical expressions and functions into editable bezier curves in seconds. Simply enter the function you want to visualise (e.g. sin(x+1)*cos(x)^2), press Insert, and enjoy the rendered graph right in your Figma file canvas. 
 <br />
  
 <!-- ## 🚀  Quick start
@@ -91,7 +91,7 @@ I work hard to implement the support for every function, expression, and syntax 
         coth(x)
       </td>
       <td>
-        Hyperbolic cotangent of x
+        The hyperbolic cotangent of x
       </td>
     </tr>
     <tr valign="top">
@@ -99,7 +99,7 @@ I work hard to implement the support for every function, expression, and syntax 
         random()
       </td>
       <td>
-        Random number between 0 and 1
+        A random number between 0 and 1
       </td>
     </tr>
     <tr valign="top">
@@ -123,7 +123,7 @@ I work hard to implement the support for every function, expression, and syntax 
         cbrt(x)
       </td>
       <td>
-        Cubic root of x
+        The cubic root of x
       </td>
     </tr>
     <tr valign="top">
@@ -131,7 +131,7 @@ I work hard to implement the support for every function, expression, and syntax 
         abs(x)
       </td>
       <td>
-        Absolute value of x
+        The absolute value of x
       </td>
     </tr>
     <tr valign="top">
@@ -158,23 +158,24 @@ I work hard to implement the support for every function, expression, and syntax 
 A few known issues and limitations:
 * Although the plugin can already preview discontinuous and periodical functions like *f(x) = tan(x)* quite all right, it cannot render them properly.
 * Not every graph type is rendered and scaled as it should, especially functions with abrupt changes like *f(x) = 1/x*.
+* Some dummy inputs (like the single "s" letter) won't throw an error.
 <br />
 
 ## 👀  Future development
 I'm a product designer and programming is only my hobby, so besides basically learning how to code and fixing the bugs described above, here are my other plans:
-* Reduce the number of points in the rendered vector path by implementing [the Ramer–Douglas–Peucker algorithm](https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm).
-* Refactor and rewrite the most problematic parts of the code. Probably redesign the logic distributed between Typescript and UI files.
+* Improve UX: detailed validation error messages, faster preview render, and other small fixes).
+* Refactor and rewrite the most problematic parts of the code (e.g. debouncing algorithm).
 * Enrich the UI by adding the supported syntax pop-up and GitHub repository link.
-* Improve the performance and speed by simplifying the process of previewing the entered function on canvas as well as the method of rendering the final vector path. I know that it's done  badly. 
+* Improve the performance and speed by simplifying the process of previewing the entered function on canvas as well as the method of rendering the final vector path. I know that it's done  poorly. 
 <br />
 
 ## 🪲  Bug reports or feature requests
 If you have a bug report or a feature request, please don’t hesitate to add a new issue, or write a message to my email address or Telegram.
-* Email: [hello@maslenkou.com](mailto:hello@maslenkou.com)
+* Email: [ruslan@maslenkou.com](mailto:ruslan@maslenkou.com)
 * Telegram: [@maslenkou](t.me/maslenkou)
 <br />
 
-## 🫡    Support
+## 🫡  Support
 My best reward and motivation are you giving this project a star ⭐️ or contributing to its development.
 <br />
 
