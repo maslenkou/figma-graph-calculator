@@ -1,0 +1,120 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: var(--figma-color-bg);
+    color: var(--figma-color-text);
+}
+
+label,
+.canvas-label {
+    display: block;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px; 
+    line-height: 14px;
+    letter-spacing: 0.01em;
+    padding-bottom: 8px;
+}
+
+.canvas-label {
+    padding-right: 4px;
+    display: inline-block;
+}
+
+main {
+    padding: 20px 16px;
+}
+
+section {
+    padding-bottom: 20px;
+}
+
+#preview-canvas {
+    background-color: var(--figma-color-bg-secondary);
+    border: 1px solid var(--figma-color-border);
+    border-radius: 4px;
+}
+
+.main-button {
+    padding: 12px 20px;
+    background: var(--figma-color-bg-brand);
+    border-radius: 4px;
+    width: 100%;
+    color: var(--figma-color-text-onbrand);
+    outline: 0;
+    border: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 0.01em;
+}
+
+.main-button:hover {
+    background: var(--figma-color-bg-brand-hover);
+    transition: 0.3s ease;
+}
+
+.disabled {
+    color: var(--figma-color-text-disabled);
+    background: var(--figma-color-bg-disabled);
+    border: 1px solid var(--figma-color-border-disabled);
+}
+
+.prefix {
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 14px;
+    letter-spacing: 0.01em;
+    display: inline-block;
+    width: 34px;
+}
+
+input {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 14px;
+    letter-spacing: 0.01em;
+    padding: 8px 16px;
+    border-radius: 2px;
+    width: 100%;
+    background-color: var(--figma-color-bg-secondary);
+    color: var(--figma-color-text);
+}
+
+input[aria-invalid="false"] {
+    border: 1px solid var(--figma-color-border);
+}
+
+input[aria-invalid="true"] {
+    border: 1px solid var(--figma-color-bg-danger);
+}
+
+input[aria-invalid="false"]:focus {
+    border: 1px solid var(--figma-color-bg-selected-strong);
+    outline: 3px solid var(--figma-color-bg-selected-tertiary);
+}
+
+input[aria-invalid="true"]:focus {
+    border: 1px solid var(--figma-color-bg-danger);
+    outline: 3px solid var(--figma-color-bg-danger-tertiary);
+}
+
+::-webkit-input-placeholder,
+::placeholder {
+    color: var(--figma-color-text-onselected-tertiary);
+}
+
+.expression-input {
+    width: calc(100% - 34px);
+}
