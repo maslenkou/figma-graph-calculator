@@ -1,7 +1,7 @@
 ![Main preview image](/github-assets/main-image.png)
 <br />
  
-# Figma Graph Calculator
+# Figma Graph Visualiser
 Visualise any math functions by rendering their graphs right on Figma canvas!
 Turn any mathematical expressions and functions into editable bezier curves in seconds. Simply enter the function you want to visualise (e.g. sin(x+1)*cos(x)^2), press Insert, and enjoy the rendered graph right in your Figma file canvas. 
 <br />
