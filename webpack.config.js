@@ -38,7 +38,7 @@ module.exports = (env, argv) => ({
         filename: (pathData) => {
             return pathData.chunk.name === 'code'
             ? 'code.js'
-            : '[name].[contenthash].js';
+            : '[name].js';
         },
         path: path.resolve(__dirname, 'dist'),
         clean: true,
