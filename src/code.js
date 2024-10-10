@@ -1,4 +1,15 @@
 import * as mathjs from 'mathjs';
+import * as mixpanel from 'mixpanel-figma';
+
+// Initializing Mixpanel Analytics
+mixpanel.init('da12692dae6e441016b0f496646a7f47', {
+    disable_cookie: true,
+    disable_persistence: true
+});
+
+// Tracking plugin session start
+mixpanel.track('Plugin opened');
+
 
 const borderColor = getComputedStyle(document.documentElement).getPropertyValue('--figma-color-border');
 const bgBrandColor = getComputedStyle(document.documentElement).getPropertyValue('--figma-color-bg-brand');
@@ -171,6 +182,9 @@ document.getElementById('expression').addEventListener('keyup', feature.debounce
 // Catching the click onto the "Insert" button
 document.getElementById('pluginRun').onclick = () => {
 
+    // Tracking a successful plugin session finish
+    mixpanel.track('Graph Inserted');
+
     // Defining expression variables
     const inputExpression = document.getElementById("expression").value;
     const simplifiedExpression = mathjs.parse(inputExpression);
@@ -180,6 +194,7 @@ document.getElementById('pluginRun').onclick = () => {
 
     // Checking whether the expression was parsed properly
     if (!simplifiedExpression) {
+
         //console.log('Simplified expression does not exist');
         return;
     }

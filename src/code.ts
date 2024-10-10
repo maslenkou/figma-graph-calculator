@@ -5,7 +5,7 @@ figma.showUI(__html__, { themeColors: true, width: 382, height: 420 })
 if (figma.currentPage.selection[0] === undefined || figma.currentPage.selection[0].type !== 'FRAME') {
     figma.notify('Please select a frame to run the plugin', { timeout: 4000, error: true });
     figma.closePlugin(); 
-} 
+}
 
 // Catching messages from the front office
 figma.ui.onmessage = msg => {

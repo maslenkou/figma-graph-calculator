@@ -1,6 +1,6 @@
 {
   "name": "Figma Graph Visualiser",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Visualise any math functions by rendering their graphs right on Figma canvas.",
   "main": "./dist/code.js",
   "scripts": {
@@ -48,5 +48,8 @@
         }
       ]
     }
+  },
+  "dependencies": {
+    "mixpanel-figma": "^1.0.0"
   }
 }
