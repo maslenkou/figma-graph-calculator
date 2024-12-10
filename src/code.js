@@ -1,12 +1,6 @@
 import * as mathjs from 'mathjs';
 import * as mixpanel from 'mixpanel-figma';
 
-// Initializing Mixpanel Analytics
-mixpanel.init('da12692dae6e441016b0f496646a7f47', {
-    disable_cookie: true,
-    disable_persistence: true
-});
-
 // Tracking plugin session start
 mixpanel.track('Plugin opened');
 
