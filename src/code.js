@@ -194,6 +194,7 @@ document.getElementById("pluginRun").onclick = () => {
 
 	// Defining expression variables
 	const inputExpression = document.getElementById("expression").value;
+	console.log(inputExpression);
 	const simplifiedExpression = mathjs.parse(inputExpression);
 
 	// Defining coordinate variables
@@ -203,7 +204,7 @@ document.getElementById("pluginRun").onclick = () => {
 	if (!simplifiedExpression) {
 		//console.log('Simplified expression does not exist');
 		return;
-	}
+	};
 
 	// Creating an array of coordinates
 	for (let x = -50; x < 50; x++) {
@@ -224,7 +225,7 @@ document.getElementById("pluginRun").onclick = () => {
 		} catch (error) {
 			continue;
 		}
-	}
+	};
 
 	// Sending information to the back office
 	parent.postMessage(
@@ -232,6 +233,7 @@ document.getElementById("pluginRun").onclick = () => {
 			pluginMessage: {
 				type: "insertGraph",
 				coordinatesArray: chartCoordinates,
+				userExpression: inputExpression
 			},
 		},
 		"*"
