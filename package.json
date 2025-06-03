@@ -50,6 +50,6 @@
     }
   },
   "dependencies": {
-    "mixpanel-figma": "^1.0.0"
+    "mixpanel-figma": "^1.0.1"
   }
 }
