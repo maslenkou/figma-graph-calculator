@@ -78,6 +78,12 @@ section {
     width: 34px;
 }
 
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
 input {
     font-family: 'Inter';
     font-style: normal;
@@ -86,6 +92,7 @@ input {
     line-height: 14px;
     letter-spacing: 0.01em;
     padding: 8px 16px;
+    padding-right: 36px;
     border-radius: 2px;
     width: 100%;
     background-color: var(--figma-color-bg-secondary);
@@ -117,4 +124,33 @@ input[aria-invalid="true"]:focus {
 
 .expression-input {
     width: calc(100% - 34px);
+}
+
+.clear-button {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border: none;
+    background: none;
+    color: var(--figma-color-text-tertiary);
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    border-radius: 4px;
+}
+
+.clear-button:hover {
+    color: var(--figma-color-text);
+    background-color: var(--figma-color-bg-hover);
+}
+
+.input-wrapper:hover .clear-button,
+input:not(:placeholder-shown) + .clear-button {
+    opacity: 1;
 }

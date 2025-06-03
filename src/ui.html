@@ -1,8 +1,16 @@
 <main>
   <section class="main-section">
       <label for="expression" class="main-label">Function:</label>
-      <span class="prefix">f(x)=</span><input type="text" name="expression" id="expression" class="expression-input" aria-invalid="false" 
-          placeholder="Enter the expression you want to visualize">
+      <div class="input-wrapper">
+        <span class="prefix">f(x)=</span>
+        <input type="text" name="expression" id="expression" class="expression-input" aria-invalid="false" 
+            placeholder="Enter the expression you want to visualize">
+        <button id="clearExpression" class="clear-button" type="button" aria-label="Clear input">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M12 4L4 12M4 4L12 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
   </section>
   <section class="preview-section">
       <span class="canvas-label">Preview:</span>

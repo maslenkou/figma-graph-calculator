@@ -10,6 +10,14 @@ const bgBrandColor = getComputedStyle(document.documentElement).getPropertyValue
 const backgroundDisabledColor = getComputedStyle(document.documentElement).getPropertyValue('--figma-color-bg-disabled');
 
 const expressionInput = document.getElementById("expression");
+const clearButton = document.getElementById("clearExpression");
+
+// Add clear button functionality
+clearButton.addEventListener('click', () => {
+    expressionInput.value = '';
+    expressionInput.focus();
+    feature.drawChartPreview();
+});
 
 const feature = {
     /* 

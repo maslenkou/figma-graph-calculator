@@ -1,5 +1,5 @@
 {
-  "name": "Graph Calculator",
+  "name": "Graph Visualiser",
   "id": "1411292832384115287",
   "api": "1.0.0",
   "main": "./dist/code.js",
