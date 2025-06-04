@@ -13,7 +13,7 @@
   "networkAccess": {
     "allowedDomains": [
       "https://api-js.mixpanel.com",
-      "https://mathjs.org"
+      "https://github.com"
     ]
   }
 }

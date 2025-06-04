@@ -1,5 +1,5 @@
 // Initializing the UI
-figma.showUI(__html__, { themeColors: true, width: 382, height: 420 });
+figma.showUI(__html__, { themeColors: true, width: 382, height: 404 });
 
 // Checking whether the selected node is a frame
 if (figma.currentPage.selection[0] === undefined || figma.currentPage.selection[0].type !== "FRAME") {

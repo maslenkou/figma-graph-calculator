@@ -14,6 +14,10 @@ const bgBrandColor = getComputedStyle(document.documentElement).getPropertyValue
 const backgroundDisabledColor = getComputedStyle(document.documentElement).getPropertyValue("--figma-color-bg-disabled");
 const expressionInput = document.getElementById("expression");
 const clearButton = document.getElementById("clearExpression");
+const insertButton = document.getElementById("pluginRun");
+
+// Set initial button state
+insertButton.disabled = !expressionInput.value;
 
 const feature = {
 	/* 
@@ -107,25 +111,23 @@ const feature = {
 		const quantityValue = 0.25;
 		let expressionInputValue = expressionInput.value;
 
-		// Checking whether the equation is valid and can be parsed
-		try {
-			let scope = { x: 0 };
-			mathjs.evaluate(expressionInputValue, scope);
-			expressionInput.setAttribute("aria-invalid", "false");
-		} catch (error) {
-			expressionInput.setAttribute("aria-invalid", "true");
-			//console.log('Error!');
-			return;
-		}
-
-		let parsedExpression = mathjs.parse(expressionInputValue);
-
-		// Redrawing the canvas
+		// Clear the canvas first
 		ctx.save();
 		ctx.setTransform(1, 0, 0, 1, 0, 0);
 		ctx.clearRect(0, 0, previewCanvas.width, previewCanvas.height);
 		ctx.restore();
 		feature.generateCanvasCoordinates();
+
+		// Checking whether the equation is valid and can be parsed
+		if (!validateExpression(expressionInputValue)) {
+			expressionInput.setAttribute("aria-invalid", "true");
+			// Show error message
+			ctx.fillText("Cannot preview invalid expression. Please check your function.", -120, -20);
+			return;
+		}
+		expressionInput.setAttribute("aria-invalid", "false");
+
+		let parsedExpression = mathjs.parse(expressionInputValue);
 
 		// Calculating the temporary coordinates we need to draw the preview the chart
 		// TODO: remove dividing by 28 and scale the preview chart properly
@@ -164,8 +166,12 @@ const feature = {
 		}
 		ctx.stroke();
 	},
+
+	/* 
+	Global function clearInput
+	Adds clear button functionality
+	*/
 	clearInput() {
-		// Add clear button functionality
 		clearButton.addEventListener("click", () => {
 			expressionInput.value = "";
 			expressionInput.focus();
@@ -179,13 +185,105 @@ window.addEventListener("load", () => {
 	feature.generateCanvasCoordinates();
 });
 
-// Debouncing 'Enter the equation' input
-document.getElementById("expression").addEventListener(
-	"keyup",
-	feature.debounce(() => {
-		feature.drawChartPreview();
-	}, 1000)
-);
+// Add validation helper function
+function validateExpression(expr) {
+	if (!expr) return false;
+	
+	try {
+		// Check if expression contains invalid symbols
+		// Updated regex to include common math functions
+		const validSymbolsRegex = /^[0-9x+\-*/^().\s,a-z]+$/i;
+		if (!validSymbolsRegex.test(expr)) {
+			return false;
+		}
+
+		// Parse the expression to check syntax
+		const parsedExpr = mathjs.parse(expr);
+		
+		// Get all variables and function names used in the expression
+		const variables = new Set();
+		const functions = new Set();
+		parsedExpr.traverse((node) => {
+			if (node.type === "SymbolNode") {
+				variables.add(node.name);
+			} else if (node.type === "FunctionNode") {
+				functions.add(node.name);
+			}
+		});
+
+		// Remove known function names from variables
+		const validFunctions = new Set([
+			"sin",
+			"cos",
+			"tan",
+			"asin",
+			"acos",
+			"atan",
+			"sqrt",
+			"abs",
+			"exp",
+			"log",
+			"log10",
+			"log2",
+			"ln",
+			"sinh",
+			"cosh",
+			"tanh",
+			"ceil",
+			"floor",
+			"round",
+			"sign",
+			"cbrt",
+		]);
+
+		variables.forEach((v) => {
+			if (validFunctions.has(v)) {
+				variables.delete(v);
+			}
+		});
+
+		// Only allow 'x' as variable, unless it's a constant
+		const validVars = new Set(["x"]);
+		if (variables.size > 0 && ![...variables].every((v) => validVars.has(v))) {
+			return false;
+		}
+
+		// Verify all used functions are valid
+		if (![...functions].every((f) => validFunctions.has(f))) {
+			return false;
+		}
+
+		// Test evaluation at multiple points
+		const testPoints = [0.5, 1, 2];  // Using positive numbers for log function
+		for (const x of testPoints) {
+			const scope = { x };
+			const result = mathjs.evaluate(expr, scope);
+			if (typeof result !== "number" || !isFinite(result)) {
+				return false;
+			}
+		}
+
+		return true;
+	} catch (error) {
+		return false;
+	}
+}
+
+// Update the immediate validation listener
+expressionInput.addEventListener("input", (e) => {
+	const isValid = validateExpression(e.target.value);
+	expressionInput.setAttribute("aria-invalid", (!isValid).toString());
+	insertButton.disabled = !isValid;
+});
+
+// Debounce the heavy chart drawing operation
+const debouncedDrawChart = feature.debounce(() => {
+	feature.drawChartPreview();
+}, 200);
+
+// Listen to both input and change events
+expressionInput.addEventListener("input", debouncedDrawChart);
+expressionInput.addEventListener("change", debouncedDrawChart);
 
 // Catching the click onto the "Insert" button
 document.getElementById("pluginRun").onclick = () => {
@@ -204,7 +302,7 @@ document.getElementById("pluginRun").onclick = () => {
 	if (!simplifiedExpression) {
 		//console.log('Simplified expression does not exist');
 		return;
-	};
+	}
 
 	// Creating an array of coordinates
 	for (let x = -50; x < 50; x++) {
@@ -225,7 +323,7 @@ document.getElementById("pluginRun").onclick = () => {
 		} catch (error) {
 			continue;
 		}
-	};
+	}
 
 	// Sending information to the back office
 	parent.postMessage(
@@ -233,7 +331,7 @@ document.getElementById("pluginRun").onclick = () => {
 			pluginMessage: {
 				type: "insertGraph",
 				coordinatesArray: chartCoordinates,
-				userExpression: inputExpression
+				userExpression: inputExpression,
 			},
 		},
 		"*"

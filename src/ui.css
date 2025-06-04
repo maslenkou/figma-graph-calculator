@@ -57,7 +57,6 @@ section {
 }
 
 .main-button {
-    padding: 12px 20px;
     background: var(--figma-color-bg-brand);
     border-radius: 4px;
     width: 100%;
@@ -70,6 +69,8 @@ section {
     line-height: 16px;
     text-align: center;
     letter-spacing: 0.01em;
+    height: 36px;
+    cursor: pointer;
 }
 
 .main-button:hover {
@@ -77,10 +78,10 @@ section {
     transition: 0.3s ease;
 }
 
-.disabled {
+.main-button:disabled {
     color: var(--figma-color-text-disabled);
     background: var(--figma-color-bg-disabled);
-    border: 1px solid var(--figma-color-border-disabled);
+    cursor: default;
 }
 
 .prefix {
