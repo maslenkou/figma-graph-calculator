@@ -231,7 +231,6 @@ function validateExpression(expr) {
 			"abs",
 			"e",
 			"pi",
-
 			"atan",
 			"sqrt",
 			"log",
