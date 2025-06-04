@@ -136,6 +136,54 @@ I work hard to implement the support for every function, expression, and syntax 
     </tr>
     <tr valign="top">
       <td>
+        sqrt(x)
+      </td>
+      <td>
+        Calculate the square root of a value
+      </td>
+    </tr>
+    <tr valign="top">
+      <td>
+        log(x)
+      </td>
+      <td>
+        Calculate the logarithm of a value
+      </td>
+    </tr>
+    <tr valign="top">
+      <td>
+        ceil(x)
+      </td>
+      <td>
+        Round a value towards plus infinity
+      </td>
+    </tr>
+    <tr valign="top">
+      <td>
+        floor(x)
+      </td>
+      <td>
+        Round a value towards minus infinity
+      </td>
+    </tr>
+    <tr valign="top">
+      <td>
+        round(x)
+      </td>
+      <td>
+        Round a value towards the nearest rounded value
+      </td>
+    </tr>
+    <tr valign="top">
+      <td>
+        sign(x)
+      </td>
+      <td>
+        Compute the sign of a value
+      </td>
+    </tr>
+    <tr valign="top">
+      <td>
         e
       </td>
       <td>
