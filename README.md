@@ -204,8 +204,9 @@ I work hard to implement the support for every function, expression, and syntax 
 
 ## ☹️  Limitations and known issues
 A few known issues and limitations:
-* Although the plugin can already preview discontinuous and periodical functions like *f(x) = tan(x)* quite all right, it cannot render them properly.
+* Although the plugin can already preview discontinuous and periodical functions like *f(x) = tan(x)*, it cannot render them properly.
 * Not every graph type is rendered and scaled as it should, especially functions with abrupt changes like *f(x) = 1/x*.
+* Math.js evaluate works weird, atan(x) works fine, when at the same time asin(x) throws an error.
 <br />
 
 ## 🪲  Bug reports or feature requests
