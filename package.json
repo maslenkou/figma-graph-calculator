@@ -1,5 +1,5 @@
 {
-  "name": "Figma Graph Visualiser",
+  "name": "figma-graph-visualiser",
   "version": "1.0.1",
   "description": "Visualise any math functions by rendering their graphs right on Figma canvas.",
   "main": "./dist/code.js",
