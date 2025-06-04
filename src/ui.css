@@ -169,3 +169,32 @@ input[aria-invalid="true"]:focus {
 input:not(:placeholder-shown) + .clear-button {
     opacity: 1;
 }
+
+.canvas-container {
+    position: relative;
+    width: 100%;
+}
+
+.error-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-120px, -50%);
+    background-color: var(--figma-color-bg-danger-tertiary);
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 11px;
+    line-height: 16px;
+    color: var(--figma-color-text);
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    pointer-events: none;
+    width: 240px;
+}
+
+.error-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}

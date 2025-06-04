@@ -31,7 +31,10 @@
 	</section>
 	<section class="preview-section">
 		<span class="canvas-label">Preview:</span>
-		<canvas id="preview-canvas"></canvas>
+		<div class="canvas-container">
+			<canvas id="preview-canvas"></canvas>
+			<div class="error-overlay" id="preview-error">Cannot preview invalid expression. <br>Please check your function.</div>
+		</div>
 	</section>
 	<button id="pluginRun" class="main-button">Insert</button>
 </main>

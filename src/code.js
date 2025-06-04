@@ -121,11 +121,13 @@ const feature = {
 		// Checking whether the equation is valid and can be parsed
 		if (!validateExpression(expressionInputValue)) {
 			expressionInput.setAttribute("aria-invalid", "true");
-			// Show error message
-			ctx.fillText("Cannot preview invalid expression. Please check your function.", -120, -20);
+			// Show error message overlay
+			document.getElementById("preview-error").classList.add("visible");
 			return;
 		}
 		expressionInput.setAttribute("aria-invalid", "false");
+		// Hide error message overlay
+		document.getElementById("preview-error").classList.remove("visible");
 
 		let parsedExpression = mathjs.parse(expressionInputValue);
 
@@ -214,26 +216,31 @@ function validateExpression(expr) {
 		// Remove known function names from variables
 		const validFunctions = new Set([
 			"sin",
-			"cos",
-			"tan",
+			"sinh",
 			"asin",
-			"acos",
+			"cos",
+			"cosh",
+			"tan",
+			"tanh",
+			"cot",
+			"coth",
+			"random",
+			"pow",
+			"cube",
+			"cbrt",
+			"abs",
+			"e",
+			"pi",
+
 			"atan",
 			"sqrt",
-			"abs",
-			"exp",
 			"log",
 			"log10",
 			"log2",
-			"ln",
-			"sinh",
-			"cosh",
-			"tanh",
 			"ceil",
 			"floor",
 			"round",
 			"sign",
-			"cbrt",
 		]);
 
 		variables.forEach((v) => {
