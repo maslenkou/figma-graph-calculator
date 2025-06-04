@@ -99,7 +99,7 @@ figma.ui.onmessage = (msg) => {
 			d += ` Q ${point[n - 1][0].x} ${point[n - 1][0].y} ${coordinates[n].x} ${coordinates[n].y}`;
 		}
 
-		// Rendering the vector on Figma's canvas
+		// Configuring and rendering the vector on Figma's canvas
 		const node = figma.createVector();
 		node.name =  "Vector " + msg.userExpression;
 		node.vectorPaths = [

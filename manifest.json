@@ -12,7 +12,8 @@
   "ui": "./dist/ui.html",
   "networkAccess": {
     "allowedDomains": [
-      "https://api-js.mixpanel.com"
+      "https://api-js.mixpanel.com",
+      "https://mathjs.org"
     ]
   }
 }
