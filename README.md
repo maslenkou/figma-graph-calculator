@@ -2,8 +2,8 @@
 <br />
  
 # Figma Graph Visualiser
-Visualise any math functions by rendering their graphs right on Figma canvas!
-Turn any mathematical expressions and functions into editable bezier curves in seconds. Simply enter the function you want to visualise (e.g. sin(x+1)*cos(x)^2), press Insert, and enjoy the rendered graph right in your Figma file canvas. 
+Visualise any math functions by rendering their graphs right on the Figma canvas!
+Turn any mathematical expressions and functions into editable Bezier curves in seconds. Simply enter the function you want to visualise (e.g., sin(x+1)*cos(x)^2), press Insert, and enjoy the rendered graph right in your Figma file canvas. 
 <br />
  
 <!-- ## 🚀  Quick start
@@ -206,15 +206,6 @@ I work hard to implement the support for every function, expression, and syntax 
 A few known issues and limitations:
 - [ ] Although the plugin can already preview discontinuous and periodical functions like *f(x) = tan(x)* quite all right, it cannot render them properly.
 - [ ] Not every graph type is rendered and scaled as it should, especially functions with abrupt changes like *f(x) = 1/x*.
-- [x] Some dummy inputs (like the single "s" letter) won't throw an error.
-<br />
-
-## 👀  Future development
-I'm a product designer and programming is only my hobby, so besides basically learning how to code and fixing the bugs described above, here are my other plans:
-- [x] Improve UX: detailed validation error messages, faster preview render, and other small fixes).
-- [x] Refactor and rewrite the most problematic parts of the code (e.g. debouncing algorithm).
-- [x] Enrich the UI by adding the supported syntax cheatsheet.
-- [x] Improve the performance and speed by simplifying the process of previewing the entered function on canvas as well as the method of rendering the final vector path. I know that it's done  poorly. 
 <br />
 
 ## 🪲  Bug reports or feature requests
