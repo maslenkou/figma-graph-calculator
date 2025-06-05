@@ -1,0 +1,19 @@
+{
+  "name": "Graph Visualiser",
+  "id": "1411292832384115287",
+  "api": "1.0.0",
+  "main": "./code.js",
+  "capabilities": [],
+  "enableProposedApi": false,
+  "documentAccess": "dynamic-page",
+  "editorType": [
+    "figma"
+  ],
+  "ui": "./ui.html",
+  "networkAccess": {
+    "allowedDomains": [
+      "https://api-js.mixpanel.com",
+      "https://github.com"
+    ]
+  }
+}

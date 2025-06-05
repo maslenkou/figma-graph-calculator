@@ -4,10 +4,10 @@
   "description": "Visualise any math functions by rendering their graphs right on Figma canvas.",
   "main": "./dist/code.js",
   "scripts": {
-    "watch": "webpack --watch",
     "lint": "eslint --ext .ts,.tsx --ignore-pattern node_modules .",
     "lint:fix": "eslint --ext .ts,.tsx --ignore-pattern node_modules --fix .",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "build:watch": "webpack --mode=development --watch"
   },
   "author": "",
   "license": "",
